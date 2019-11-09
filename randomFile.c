@@ -48,7 +48,7 @@ int main(){
 	}
 
 	//Checking arrays...
-	printf("\nPrinting final check...");
+	printf("\nPrinting final check...\n");
 	for(i = 0; i < 10; i++){
 		if(arr[i] == veri[i]){
 			printf("Index %d equal?\tTRUE\n", i);
