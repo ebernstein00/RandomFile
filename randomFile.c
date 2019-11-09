@@ -22,7 +22,7 @@ int main(){
 	}
 	
 	//Print array values...
-	printf("Original data read...\n")
+	printf("Original data read...\n");
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, arr[i]);
 	}
@@ -32,6 +32,7 @@ int main(){
 	if (wrtr == -1) printf("Error #%d: %s", errno, strerror(errno));
 	write(wrtr, arr, sizeof(int) * 10);
 	printf("\nData written to file...\n");
+	close(wrtr);
 
 	//Reading into new array...
 	int veri[10];
