@@ -20,8 +20,7 @@ int main(){
 	for(i = 0; i < 10; i++){
 		arr[i] = randNumGen();
 	}
-	if (wrtr == -1) printf("Error #%d: %s", errno, strerror(errno));
-
+	
 	//Print array values...
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, arr[i]);
@@ -37,7 +36,7 @@ int main(){
 	int veri[10];
 	int rdr = open("file.txt", O_RDONLY);
 	read(rdr, veri, sizeof(int) * 10);
-	if (wrtr == -1) printf("Error #%d: %s", errno, strerror(errno));
+	if (rdr == -1) printf("Error #%d: %s", errno, strerror(errno));
 	close(rdr);
 
 	//Print new array...
