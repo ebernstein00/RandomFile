@@ -6,7 +6,7 @@
 #include <errno.h>
 
 int randNumGen(){
-	int fd = open("/dev/random");
+	int fd = open("/dev/random", O_RDONLY);
 	int bytes = read(fd, int stor[1], sizeof(int));
 	return bytes;
 	close(fd);
