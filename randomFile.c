@@ -28,19 +28,17 @@ int main(){
 
 	//Write to another file...
 	int wrtr = open("file.txt", O_WRONLY | O_CREAT);
-	int bytes = write(wrtr, arr, sizeof(int) * 10);
-	printf("Data written to file...");
-
-	close(wrtr);
+	write(wrtr, arr, sizeof(int) * 10);
+	printf("\nData written to file...\n");
 
 	//Reading into new array...
 	int veri[10];
 	int rdr = open("file.txt", O_RDONLY);
-	bytes = read(rdr, veri, sizeof(int) * 10);
+	read(rdr, veri, sizeof(int) * 10);
 	close(rdr);
 
 	//Print new array...
-	printf("Verification:\n");
+	printf("\nVerification:\n");
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, veri[i]);
 	}
