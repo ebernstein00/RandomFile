@@ -7,7 +7,8 @@
 
 int randNumGen(){
 	int fd = open("/dev/random", O_RDONLY);
-	int bytes = read(fd, int stor[1], sizeof(int));
+	int buf[1];
+	int bytes = read(fd, buf, sizeof(int));
 	return bytes;
 	close(fd);
 }
