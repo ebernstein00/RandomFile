@@ -39,7 +39,7 @@ int main(){
 	close(rdr);
 
 	//Print new array...
-	printf("Verification:\n")
+	printf("Verification:\n");
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, veri[i]);
 	}
