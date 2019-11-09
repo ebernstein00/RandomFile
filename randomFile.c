@@ -8,7 +8,7 @@
 int randNumGen(){
 	int fd = open("/dev/random", O_RDONLY);
 	int buf[1];
-	read(fd, buf, sizeof(int));
+	int bytes = read(fd, buf, sizeof(int));
 	return buf[0];
 	close(fd);
 }
@@ -28,14 +28,15 @@ int main(){
 
 	//Write to another file...
 	int wrtr = open("file.txt", O_WRONLY | O_CREAT);
-	write(wrtr, arr, 40);//sizeof(int) * 10);
+	int bytes = write(wrtr, arr, sizeof(int) * 10);
 	printf("Data written to file...");
+
 	close(wrtr);
 
 	//Reading into new array...
 	int veri[10];
 	int rdr = open("file.txt", O_RDONLY);
-	read(rdr, veri, 40);//sizeof(int) * 10);
+	bytes = read(rdr, veri, sizeof(int) * 10);
 	close(rdr);
 
 	//Print new array...
