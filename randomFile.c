@@ -9,7 +9,7 @@ int randNumGen(){
 	int fd = open("/dev/random", O_RDONLY);
 	int buf[1];
 	int bytes = read(fd, buf, sizeof(int));
-	return bytes;
+	return buf[0];
 	close(fd);
 }
 
@@ -23,6 +23,6 @@ int main(){
 
 	//Print array values...
 	for(i = 0; i < 10; i++){
-		printf("Index %d:\t%d", i, arr[i]);
+		printf("Index %d:\t%d\n", i, arr[i]);
 	}
 }
