@@ -27,7 +27,7 @@ int main(){
 	}
 
 	//Write to another file...
-	int wrtr = open("file.txt", O_WRONLY | O_CREAT);
+	int wrtr = open("file.txt", O_WRONLY | O_CREAT, 0644);
 	write(wrtr, arr, sizeof(int) * 10);
 	printf("\nData written to file...\n");
 
