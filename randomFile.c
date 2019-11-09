@@ -22,6 +22,7 @@ int main(){
 	}
 	
 	//Print array values...
+	printf("Original data read...\n")
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, arr[i]);
 	}
@@ -40,8 +41,21 @@ int main(){
 	close(rdr);
 
 	//Print new array...
-	printf("\nVerification:\n");
+	printf("\nVerification...\n");
 	for(i = 0; i < 10; i++){
 		printf("Index %d:\t%d\n", i, veri[i]);
 	}
+
+	//Checking arrays...
+	printf("\nPrinting final check...")
+	for(i = 0; i < 10; i++){
+		if(arr[i] == veri[i]){
+			printf("Index %d equal?\tTRUE\n", i);
+		}
+		else{
+			printf("Index %d equal?\tFALSE\n", i);
+		}
+	}
+
+	printf("\nTesting concluded...\n")
 }
